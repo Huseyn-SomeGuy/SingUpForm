@@ -1,0 +1,236 @@
+/*Reseting*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*=========================================================================================================*/
+
+/*Fonts*/
+/*font-family: 'Poppins', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/*=========================================================================================================*/
+
+/*  Colors
+### Primary
+
+- Red: hsl(0, 100%, 74%) 
+- Green: hsl(154, 59%, 51%)
+
+### Accent
+
+- Blue: hsl(248, 32%, 49%)
+
+### Neutral
+
+- Dark Blue: hsl(249, 10%, 26%) 
+- Grayish Blue: hsl(246, 25%, 77%)
+ */
+/*=========================================================================================================*/
+  /*Variables*/
+   $Dark-Blue: hsl(249, 10%, 26%);
+   $Grayish-Blue: hsl(246, 25%, 77%);
+   $Blue: hsl(248, 32%, 49%);
+   $Red: hsl(0, 100%, 74%) ;
+   $Green: hsl(154, 59%, 51%);
+/*=========================================================================================================*/
+
+:root{
+   font-size: 16px;
+   font-family: 'Poppins', sans-serif;
+}
+
+::placeholder{
+   font-weight: 600;
+}
+
+.wrapper {
+   height: 100vh;
+   overflow: hidden;
+   background-image: url("../img/bg-intro-mobile.png");
+   background-color: $Red;
+   overflow-y: auto;
+   display: flex;
+   align-items: center;
+}
+.container {
+   margin: 0 1.5rem;
+}
+.content {
+   max-width: 425px;
+   margin: 0 auto;
+
+		&__description {
+         margin: 6rem 0px 3rem 0px;
+         color: #fff;
+         line-height: 1.5rem;
+         text-align: center;
+		}
+
+		&__title {
+         font-weight: 700;
+         font-size: 22px;
+         margin-bottom: 2rem;
+		}
+
+		&__subtitle {
+         color: #f3f3f3;
+         font-weight: 500;
+		}
+
+}
+.form {
+
+		&__price {
+         background-color: $Blue;
+         color: white;
+         border-radius: 10px;
+         padding: 1rem 3rem;
+         text-align: center;
+         line-height: 1.5rem;
+         margin-bottom: 1rem;
+         box-shadow: 0 7px 1px rgba(0, 0, 0, 0.2);
+		}
+
+		&__body {
+         background-color: #fff;
+         border-radius: 10px;
+         padding: 1.5rem;
+         margin-bottom: 1rem;
+         box-shadow: 0 7px 1px rgba(0, 0, 0, 0.2);
+
+		}
+}
+
+.input-box{
+   display: block;
+   position: relative;
+   margin: 0 0 1rem 0;
+
+}
+
+.input {
+      width: 100%;
+      border: 1.5px solid $Grayish-Blue;
+      border-radius: 3px;
+      padding: 1rem;
+      font-weight: 600;
+      color: $Dark-Blue;
+}
+
+.error-icon{
+   position: absolute;
+   top: 20%;
+   right: 5%;
+   display: none;
+}
+
+.error-message{
+   text-align: right;
+   font-size: 12px;
+   font-style: italic;
+   color: red;
+   line-height: 1.5rem;
+   padding: 0 .5rem;
+   display: none;
+}
+
+.input-error{
+   border: 1px solid red;
+}
+
+
+.input-box.input-box--error{
+   .error-icon{
+      display: inline-block;
+   }
+}
+
+
+button{
+   width: 100%;
+   padding: 1rem;
+   margin-bottom: .8rem;
+   background-color: $Green;
+   border-radius: 4px;
+   color: white;
+   text-transform: uppercase;
+   font-weight: 500;
+   letter-spacing: .1rem;
+   box-shadow: inset 0 -3px 3px 0px rgba(0, 0, 0, 0.2);
+   transition: all 500ms;
+}
+
+button:hover{
+   opacity: .6;
+}
+
+.footer {
+   font-size: 12px;
+   color: $Grayish-Blue;
+   text-align: center;
+   padding: 0 2rem;
+   line-height: 1.4rem;
+   font-weight: 500;
+   b {
+      color: $Red;
+   }
+}
+
+@media (min-width: 800px){
+   .wrapper{
+      background-image: url("../img/bg-intro-desktop.png");
+   }
+   .content{
+      max-width: 1440px;
+      &__description{
+         text-align: left;
+         padding: 0 3rem;
+      }
+      &__title{
+         font-size: 35px;
+         line-height: 2.5rem;
+         margin-bottom: 1rem;
+      }
+      &__form{
+         min-width: 400px;
+      }
+   }
+   .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5rem;
+   }
+}
